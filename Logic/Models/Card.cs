@@ -37,3 +37,5 @@ public class TamerCard : Subcard
     
 }
 
+
+public abstract class PlayCondition { }

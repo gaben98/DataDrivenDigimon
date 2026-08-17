@@ -62,28 +62,45 @@
                     "outcomes": [
                         {
                             "mandatory": false,
-                            "type": "trash-card-and-act",
+                            "type": "conditional-outcome",
                             "parameters": {
-                                "trash-query": {
-                                    "face-down": true,
-                                    "underneath-query": {
-                                        "traits": [
-                                            "tamer"
-                                        ]
-                                    }
-                                },
-                                "Actions": [
+                                "conditions": [
                                     {
-                                        "min": 1,
-                                        "max": 1,
-                                        "pick-query": {
-                                            "yours": false,
-                                            "traits": [
-                                                "digimon"
-                                            ]
-                                        },
+                                        "type": "trash-cards",
+                                        "parameters": {
+                                            "target": {
+                                                "query": [
+                                                    {
+                                                        "face-down": true,
+                                                        "underneath-query": {
+                                                            "traits": [
+                                                                "tamer"
+                                                            ]
+                                                        }
+                                                    }
+                                                ],
+                                                "min-cards": 1,
+                                                "max-cards": 1
+                                            }                                          
+                                        }
+                                    }
+                                ],
+                                "Results": [
+                                    {
                                         "type": "de-digivolve",
                                         "parameters": {
+                                            "target": {
+                                                "query": [
+                                                        {
+                                                        "yours": false,
+                                                        "traits": [
+                                                            "digimon"
+                                                        ]
+                                                    }                                           
+                                                ],
+                                                "min-cards": 1,
+                                                "max-cards": 1
+                                            },
                                             "times": 1
                                         }
                                     }
