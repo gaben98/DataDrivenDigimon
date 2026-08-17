@@ -1,0 +1,152 @@
+{
+    "id": "ST23-06",
+    "subcards": [
+        {
+            "name": "Gekkomon",
+            "type": "digimon",
+            "colors": [
+                "green"
+            ],
+            "dpower": 1000,
+            "level": 3,
+            "play-cost": 3,
+            "play-conditions": [
+                {
+                    "type": "deploy-locations",
+                    "parameters": {
+                        "locations": [
+                            "field"
+                        ]
+                    }
+                }
+            ],
+            "digivolutions": [
+                {
+                    "cost": 0,
+                    "target": [
+                        {
+                            "minlevel": 2,
+                            "maxlevel": 2,
+                            "colors": [
+                                "green"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "cost": 0,
+                    "target": [
+                        {
+                            "minlevel": 2,
+                            "maxlevel": 2,
+                            "traits": [
+                                "glowing-dawn"
+                            ]
+                        }
+                    ]
+                }
+            ],
+            "traits": [
+                "data",
+                "reptile",
+                "glowing-dawn",
+                "beatbreak"
+            ],
+            "effects": [
+                {
+                    "conditions": [],
+                    "triggers": [
+                        "when-moving",
+                        "on-play"
+                    ],
+                    "outcomes": [
+                        {
+                            "mandatory": true,
+                            "type": "draw-n",
+                            "parameters": {
+                                "n": 3,
+                                "visible": true,
+                                "source": "deck-top",
+                                "Actions": [
+                                    {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pick-query": {
+                                            "traits": [
+                                                "glowing-dawn"
+                                            ]
+                                        },
+                                        "type": "send-card",
+                                        "parameters": {
+                                            "destination": {
+                                                "type": "to-location",
+                                                "parameters": {
+                                                    "location": "hand"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    {
+                                        "min": 0,
+                                        "max": 1,
+                                        "pick-query": {
+                                            "traits": [
+                                                "glowing-dawn"
+                                            ]
+                                        },
+                                        "type": "send-card",
+                                        "parameters": {
+                                            "destination": {
+                                                "type": "underneath",
+                                                "parameters": {
+                                                    "target-query": {
+                                                        "types": [
+                                                            "tamer"
+                                                        ]
+                                                    },
+                                                    "visibility": false
+                                                }
+                                            }
+                                        }
+                                    }
+                                ],
+                                "remainder": {
+                                    "destination": {
+                                        "type": "to-location",
+                                        "parameters": {
+                                            "location": "deck-bottom"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
+                {
+                    "conditions": [
+                        {
+                            "type": "effect-is-inherited"
+                        }
+                    ],
+                    "triggers": [],
+                    "outcomes": [
+                        {
+                            "mandatory": true,
+                            "type": "assign-keywords",
+                            "parameters": {
+                                "targets": [
+                                    {
+                                        "actor": true
+                                    }
+                                ],
+                                "keywords": [
+                                    "piercing"
+                                ]
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
