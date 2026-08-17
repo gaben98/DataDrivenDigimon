@@ -8,8 +8,6 @@
                 "green",
                 "black"
             ],
-            "dpower": 8000,
-            "level": 5,
             "play-conditions": [
                 {
                     "type": "cant-play-to-field"
@@ -48,6 +46,10 @@
                 "glowing-dawn",
                 "beatbreak"
             ],
+            "stats": {
+                "dpower": 8000,
+                "level": 5
+            },
             "effects": [
                 {
                     "conditions": [

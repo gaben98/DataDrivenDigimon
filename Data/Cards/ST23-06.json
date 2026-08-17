@@ -7,9 +7,6 @@
             "colors": [
                 "green"
             ],
-            "dpower": 1000,
-            "level": 3,
-            "play-cost": 3,
             "play-conditions": [
                 {
                     "type": "deploy-locations",
@@ -52,6 +49,11 @@
                 "glowing-dawn",
                 "beatbreak"
             ],
+            "stats": {
+                "dpower": 1000,
+                "level": 3,
+                "play-cost": 3
+            },
             "effects": [
                 {
                     "conditions": [],
