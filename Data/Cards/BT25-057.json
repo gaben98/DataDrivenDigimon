@@ -2,15 +2,15 @@
     "id": "BT25-057",
     "subcards": [
         {
+            "$type": "digimon",
             "name": "Monarchlizamon",
-            "type": "digimon",
             "colors": [
                 "green",
                 "black"
             ],
             "play-conditions": [
                 {
-                    "type": "cant-play-to-field"
+                    "$type": "cant-play-to-field"
                 }
             ],
             "digivolutions": [
@@ -61,51 +61,45 @@
                     ],
                     "outcomes": [
                         {
+                            "$type": "conditional-outcome",
                             "mandatory": false,
-                            "type": "conditional-outcome",
-                            "parameters": {
-                                "conditions": [
-                                    {
-                                        "type": "trash-cards",
-                                        "parameters": {
-                                            "target": {
-                                                "query": [
-                                                    {
-                                                        "face-down": true,
-                                                        "underneath-query": {
-                                                            "traits": [
-                                                                "tamer"
-                                                            ]
-                                                        }
-                                                    }
-                                                ],
-                                                "min-cards": 1,
-                                                "max-cards": 1
-                                            }                                          
-                                        }
+                            "conditions": [
+                                {
+                                    "$type": "trash-cards",
+                                    "target": {
+                                        "query": [
+                                            {
+                                                "face-down": true,
+                                                "underneath-query": {
+                                                    "traits": [
+                                                        "tamer"
+                                                    ]
+                                                }
+                                            }
+                                        ],
+                                        "min-cards": 1,
+                                        "max-cards": 1
                                     }
-                                ],
-                                "Results": [
-                                    {
-                                        "type": "de-digivolve",
-                                        "parameters": {
-                                            "target": {
-                                                "query": [
-                                                        {
-                                                        "yours": false,
-                                                        "traits": [
-                                                            "digimon"
-                                                        ]
-                                                    }                                           
-                                                ],
-                                                "min-cards": 1,
-                                                "max-cards": 1
-                                            },
-                                            "times": 1
-                                        }
-                                    }
-                                ]
-                            }
+                                }
+                            ],
+                            "Results": [
+                                {
+                                    "$type": "de-digivolve",
+                                    "target": {
+                                        "query": [
+                                                {
+                                                "yours": false,
+                                                "traits": [
+                                                    "digimon"
+                                                ]
+                                            }                                           
+                                        ],
+                                        "min-cards": 1,
+                                        "max-cards": 1
+                                    },
+                                    "times": 1
+                                }
+                            ]
                         }
 
                     ]
@@ -118,61 +112,53 @@
                     "keywords": [],
                     "outcomes": [
                         {
+                            "$type": "act",
                             "mandatory": false,
-                            "type": "act",
-                            "parameters": {
-                                "actions": [
-                                    {
-                                        "min": 1,
-                                        "max": 1,
-                                        "pick-query": {
-                                            "actor": true
-                                        },
-                                        "type": "battle",
-                                        "parameters": {
-                                            "target-query": {
-                                                "yours": false,
-                                                "traits": [
-                                                    "digimon"
-                                                ]
-                                            }
-                                        }
+                            "actions": [
+                                {
+                                    "$type": "battle",
+                                    "min": 1,
+                                    "max": 1,
+                                    "pick-query": {
+                                        "context-cards": true
+                                    },
+                                    "target-query": {
+                                        "yours": false,
+                                        "traits": [
+                                            "digimon"
+                                        ]
                                     }
-                                ]
-                            }
+                                }
+                            ]
                         }
                     ]
                 }
             ]
         },
         {
+            "$type": "option",
             "name": "Final Judgement",
-            "type": "option",
             "colors": [
                 "green"
             ],
             "play-cost": 4,
             "play-conditions": [
                 {
-                    "type": "card-exists",
-                    "parameters": {
-                        "targets": [
-                            {
-                                "colors": [
-                                    "green"
-                                ]
-                            }
-                        ]
-                    }
-                },
-                {
-                    "type": "card-exists",
-                    "parameters": {
-                        "target": {
-                            "traits": [
-                                "glowing-dawn"
+                    "$type": "card-exists",
+                    "targets": [
+                        {
+                            "colors": [
+                                "green"
                             ]
                         }
+                    ]
+                },
+                {
+                    "$type": "card-exists",
+                    "target": {
+                        "traits": [
+                            "glowing-dawn"
+                        ]
                     }
                 }
             ],
@@ -186,21 +172,19 @@
                 {
                     "conditions": [
                         {
-                            "type": "card-exists",
-                            "parameters": {
-                                "targets": [
-                                    {
-                                        "colors": [
-                                            "green"
-                                        ]
-                                    },
-                                    {
-                                        "traits": [
-                                            "glowing-dawn"
-                                        ]
-                                    }
-                                ]
-                            }
+                            "$type": "card-exists",
+                            "targets": [
+                                {
+                                    "colors": [
+                                        "green"
+                                    ]
+                                },
+                                {
+                                    "traits": [
+                                        "glowing-dawn"
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "triggers": [
@@ -208,60 +192,52 @@
                     ],
                     "outcomes": [
                         {
+                            "$type": "compound-outcome",
                             "mandatory": false,
-                            "type": "compound-outcome",
-                            "parameters": {
-                                "targets": [
-                                    {
-                                        "yours": true,
-                                        "types": [
-                                            "digimon"
-                                        ]
-                                    }
-                                ],
-                                "min-selected-targets": 1,
-                                "max-selected-targets": 1,
-                                "outcomes": [
-                                    {
-                                        "mandatory": true,
-                                        "type": "assign-keywords",
-                                        "parameters": {
-                                            "targets": [
-                                                {
-                                                    "context-cards": true
-                                                }
-                                            ],
-                                            "keywords": [
-                                                "rush"
-                                            ]
+                            "targets": [
+                                {
+                                    "yours": true,
+                                    "types": [
+                                        "digimon"
+                                    ]
+                                }
+                            ],
+                            "min-selected-targets": 1,
+                            "max-selected-targets": 1,
+                            "outcomes": [
+                                {
+                                    "$type": "assign-keywords",
+                                    "mandatory": true,
+                                    "targets": [
+                                        {
+                                            "context-cards": true
                                         }
-                                    },
-                                    {
-                                        "mandatory": true,
-                                        "type": "change-security-attack-count",
-                                        "parameters": {
-                                            "targets": [
-                                                {
-                                                    "context-cards": true
-                                                }
-                                            ],
-                                            "delta": 1
+                                    ],
+                                    "keywords": [
+                                        "rush"
+                                    ]
+                                },
+                                {
+                                    "$type": "change-security-attack-count",
+                                    "mandatory": true,
+                                    "targets": [
+                                        {
+                                            "context-cards": true
                                         }
-                                    },
-                                    {
-                                        "mandatory": true,
-                                        "type": "change-dpower",
-                                        "parameters": {
-                                            "targets": [
-                                                {
-                                                    "context-cards": true
-                                                }
-                                            ],
-                                            "delta": 5000
+                                    ],
+                                    "delta": 1
+                                },
+                                {
+                                    "$type": "change-dpower",
+                                    "mandatory": true,
+                                    "targets": [
+                                        {
+                                            "context-cards": true
                                         }
-                                    }
-                                ]
-                            }
+                                    ],
+                                    "delta": 5000
+                                }
+                            ]
                         }
                     ]
                 }

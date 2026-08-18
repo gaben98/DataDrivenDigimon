@@ -14,5 +14,5 @@ public class DrawNCards : Act
     /// <summary>
     /// Where to send the remaining unsent cards
     /// </summary>
-    public CardSendDestination Remainder { get; set; }
+    public CardSendDestination Remainder { get; set; } = new ToLocation();
 }

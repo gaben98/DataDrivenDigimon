@@ -2,19 +2,17 @@
     "id": "ST23-06",
     "subcards": [
         {
+            "$type": "digimon",
             "name": "Gekkomon",
-            "type": "digimon",
             "colors": [
                 "green"
             ],
             "play-conditions": [
                 {
-                    "type": "deploy-locations",
-                    "parameters": {
-                        "locations": [
-                            "field"
-                        ]
-                    }
+                    "$type": "deploy-locations",
+                    "locations": [
+                        "field"
+                    ]
                 }
             ],
             "digivolutions": [
@@ -63,62 +61,50 @@
                     ],
                     "outcomes": [
                         {
+                            "$type": "draw-n-cards",
                             "mandatory": true,
-                            "type": "draw-n",
-                            "parameters": {
-                                "n": 3,
-                                "visible": true,
-                                "source": "deck-top",
-                                "Actions": [
-                                    {
-                                        "min": 0,
-                                        "max": 1,
-                                        "pick-query": {
-                                            "traits": [
-                                                "glowing-dawn"
-                                            ]
-                                        },
-                                        "type": "send-card",
-                                        "parameters": {
-                                            "destination": {
-                                                "type": "to-location",
-                                                "parameters": {
-                                                    "location": "hand"
-                                                }
-                                            }
-                                        }
+                            "n": 3,
+                            "visible": true,
+                            "source": "deck-top",
+                            "Actions": [
+                                {
+                                    "$type": "send-card",
+                                    "min": 0,
+                                    "max": 1,
+                                    "pick-query": {
+                                        "traits": [
+                                            "glowing-dawn"
+                                        ]
                                     },
-                                    {
-                                        "min": 0,
-                                        "max": 1,
-                                        "pick-query": {
-                                            "traits": [
-                                                "glowing-dawn"
+                                    "destination": {
+                                        "$type": "to-location",
+                                        "location": "hand"
+                                    }
+                                },
+                                {
+                                    "$type": "send-card",
+                                    "min": 0,
+                                    "max": 1,
+                                    "pick-query": {
+                                        "traits": [
+                                            "glowing-dawn"
+                                        ]
+                                    },
+                                    "destination": {
+                                        "$type": "underneath",
+                                        "target-query": {
+                                            "types": [
+                                                "tamer"
                                             ]
                                         },
-                                        "type": "send-card",
-                                        "parameters": {
-                                            "destination": {
-                                                "type": "underneath",
-                                                "parameters": {
-                                                    "target-query": {
-                                                        "types": [
-                                                            "tamer"
-                                                        ]
-                                                    },
-                                                    "visibility": false
-                                                }
-                                            }
-                                        }
+                                        "visibility": false
                                     }
-                                ],
-                                "remainder": {
-                                    "destination": {
-                                        "type": "to-location",
-                                        "parameters": {
-                                            "location": "deck-bottom"
-                                        }
-                                    }
+                                }
+                            ],
+                            "remainder": {
+                                "destination": {
+                                    "$type": "to-location",
+                                    "location": "deck-bottom"
                                 }
                             }
                         }
@@ -127,24 +113,22 @@
                 {
                     "conditions": [
                         {
-                            "type": "effect-is-inherited"
+                            "$type": "effect-is-inherited"
                         }
                     ],
                     "triggers": [],
                     "outcomes": [
                         {
                             "mandatory": true,
-                            "type": "assign-keywords",
-                            "parameters": {
-                                "targets": [
-                                    {
-                                        "actor": true
-                                    }
-                                ],
-                                "keywords": [
-                                    "piercing"
-                                ]
-                            }
+                            "$type": "assign-keywords",
+                            "targets": [
+                                {
+                                    "actor": true
+                                }
+                            ],
+                            "keywords": [
+                                "piercing"
+                            ]
                         }
                     ]
                 }

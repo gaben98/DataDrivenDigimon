@@ -1,3 +1,3 @@
 namespace Logic.Models.EffectConditions;
 
-public class OncePerTurn : EffectCondition { }
+public class OncePerTurn : EffectCondition;

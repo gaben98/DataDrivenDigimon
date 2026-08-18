@@ -1,3 +1,3 @@
 namespace Logic.Models.PlayConditions;
 
-public class MustDigivolve : PlayCondition { }
+public class MustDigivolve : PlayCondition;
